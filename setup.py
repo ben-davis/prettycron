@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(
     name='prettycron',
@@ -7,5 +7,5 @@ setup(
     author='Ben Davis',
     author_email='ben@yplanapp.com',
     license='MIT',
-    packages=['prettycron'],
+    packages=find_packages(),
 )
