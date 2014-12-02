@@ -58,13 +58,13 @@ def _pretty_date(month_day, month, week_day):
             pretty_date += " in {0}".format(_human_month(month))
     else:
         month_day_date = "on the {0}".format(_ordinal(month_day)) if month_day != "*" else ""
-        week_day_date = "on every {0}".format(_human_week_day(week_day)) if week_day != "*" else ""
+        week_day_date = "every {0}".format(_human_week_day(week_day)) if week_day != "*" else ""
 
         if month_day_date:
             month_day_date += " of {0}".format(_human_month(month)) if month != "*" else " of every month"
 
-        if week_day_date:
-            week_day_date += " in {0}".format(_human_month(month)) if month != "*" else ""
+        if week_day_date and month != "*":
+            week_day_date = "on {0} in {1}".format(week_day_date, _human_month(month))
 
         pretty_date = " and ".join(c for c in [month_day_date, week_day_date] if c)
 

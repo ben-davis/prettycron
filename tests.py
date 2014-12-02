@@ -17,10 +17,10 @@ class PrettyCronTest(unittest.TestCase):
         self.assertEqual(prettycron.prettify("0 0 * 1 1"), "At 00:00 on every Monday in January")
 
     def test_weekly(self):
-        self.assertEqual(prettycron.prettify("0 0 * * 0"), "At 00:00 on every Sunday")
+        self.assertEqual(prettycron.prettify("0 0 * * 0"), "At 00:00 every Sunday")
 
     def test_monthly_and_weekly(self):
-        self.assertEqual(prettycron.prettify("0 0 1 * 1"), "At 00:00 on the 1st of every month and on every Monday")
+        self.assertEqual(prettycron.prettify("0 0 1 * 1"), "At 00:00 on the 1st of every month and every Monday")
 
     def test_every_specific_day_in_month_and_weekly(self):
         self.assertEqual(prettycron.prettify("0 0 1 1 1"), "At 00:00 on the 1st of January and on every Monday in January")
